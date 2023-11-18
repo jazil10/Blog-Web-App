@@ -3,4 +3,4 @@ A Web-App where you can come and play a new retro game every week and enjoy and 
 
 You can visit the site on the link below
 
-https://blog-web-app-git-master-jazil10s-projects.vercel.app/
+https://blog-web-80de22r1b-jazil10s-projects.vercel.app/
