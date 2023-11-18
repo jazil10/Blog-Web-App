@@ -26,7 +26,7 @@ const BlogDetail = () => {
 
     const fetchComments = async () => {
       try {
-        const commentsRes = await axios.get(`http://localhost:5000/api/comment/cblog/${id}`);
+        const commentsRes = await axios.get(`https://retroheaven.cyclic.app/api/comment/cblog/${id}`);
         setComments(commentsRes.data);
       } catch (error) {
         console.error(error);
@@ -57,7 +57,7 @@ const BlogDetail = () => {
   
   const handleDeleteComment = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/comment/deleteComment/${commentId}`);
+      await axios.delete(`https://retroheaven.cyclic.app/api/comment/deleteComment/${commentId}`);
       setComments(comments.filter(comment => comment._id !== commentId));
     } catch (error) {
       console.error(error);
@@ -66,7 +66,7 @@ const BlogDetail = () => {
   
   const updateComment = async () => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/comment/updateComment/${editingCommentId}`, {
+      const res = await axios.put(`https://retroheaven.cyclic.app/api/comment/updateComment/${editingCommentId}`, {
         text: newComment
       });
       const updatedComments = comments.map(comment => {
@@ -86,7 +86,7 @@ const BlogDetail = () => {
   const handleUpdateComment = async (commentId) => {
     const updatedText = editComments[commentId];
     try {
-      const res = await axios.put(`http://localhost:5000/api/comment/updateComment/${commentId}`, {
+      const res = await axios.put(`https://retroheaven.cyclic.app/api/comment/updateComment/${commentId}`, {
         text: updatedText
       });
       const updatedComments = comments.map(comment => {
@@ -114,7 +114,7 @@ const BlogDetail = () => {
     
     if (newComment) {
       try {
-        const res = await axios.post('http://localhost:5000/api/comment/createComment', {
+        const res = await axios.post('https://retroheaven.cyclic.app/api/comment/createComment', {
           text: newComment,
           user: userid, 
           blog: id
